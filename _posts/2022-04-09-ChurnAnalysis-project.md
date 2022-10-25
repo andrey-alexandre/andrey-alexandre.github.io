@@ -47,3 +47,25 @@ As we can see from the table below there is a little right skewness on the data,
 
 
 When we look at the churn variable, we see that 27% of the costumers left Telco last month, so in the case of a classification model, it would be indicated to treat the unbalanced data.
+
+| 0    | 1    |
+|------|------|
+| 5163 (73.42%) | 1869 (26.58%) |
+
+We can also look at how the other variables interact with churn. Firstly, we look at the clients payment method. We can see that most of the clients choose the automatic and mailed check have similar churn rates, but when eletronic checks is chosen, the churn rate rises to almost half the clients.
+
+![PaymentMethod](/assets/img/2022-04-09-ChurnAnalysis-project/PaymentMethodChurn.png)
+
+When we look if the client has a partner, we can see that clients that don't have a partner tend to leave the company more.
+
+![Partner](/assets/img/2022-04-09-ChurnAnalysis-project/PartnerChurn.png)
+
+The monthly charges also appear to have impact on churn, given that the clients that left the company had, in median, a higher bill than the clients that stayed at the company.
+
+![MonthlyCharges](/assets/img/2022-04-09-ChurnAnalysis-project/MonthlyChargesChurn.png)
+
+We also plotted the behaviour of the survival rates for each of the independent variables to analyse if they had any impact on churn. In the following plot we can notice that when the client has partners or dependents, they have higher chances to stay in the company, as well as if they don't have any internet services and use Paper Billing. With these, we could interpret that older clients, that already have a family and are not that fond of technology are more faithful clients.
+
+![SurvivalRate](/assets/img/2022-04-09-ChurnAnalysis-project/SurvivalRate.png)
+
+We can see, as well, that clients that have longer contracts tend to stay longer with the company, even considering their contract length. And clients that have automatic payment tends to stay longer too.
