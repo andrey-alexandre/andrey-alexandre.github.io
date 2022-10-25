@@ -3,6 +3,12 @@ title: "R Notebook"
 output:
   html_document:
     df_print: paged
+excerpt: "RMD TEST"
+tag:
+- "Survival Analysis"
+- "Churn"
+comments: true
+project: true
 ---
 ```{r Import libraries, include=FALSE}
 library(readr)
