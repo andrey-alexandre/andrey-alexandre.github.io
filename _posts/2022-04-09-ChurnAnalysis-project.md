@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Churn Analysis"
+title:  "Churn Analysis"
 date:   2022-04-09
-excerpt: "Churn analysis project using survival analysis methods to discover WHEN will the costumer leave the company."
+excerpt: "Churn analysis project using survival analysis methods to discover WHEN will the costumer leave the company."
 tag:
 - "Survival Analysis"
 - "Churn"
@@ -10,17 +10,17 @@ comments: true
 project: true
 ---
 # Churn Analysis
-## What is Churn analysis?
-Churn analysis is the evaluation of a company’s customer loss rate. This analysis is focused on evaluating how many costumers are being lost and bringing to light the reasons why these costumers are leaving the company.
+## What is Churn analysis?
+Churn analysis is the evaluation of a company’s customer loss rate. This analysis is focused on evaluating how many costumers are being lost and bringing to light the reasons why these costumers are leaving the company.
 
-With this metrics, we are able to reajust company policies and products to better satisfy the client, rising clients fidelity and profits as well.
+With this metrics, we are able to reajust company policies and products to better satisfy the client, rising clients fidelity and profits as well.
 
-## What is costumer churn?
-Customer churn, also known as customer attrition, is when a customer essentially stops being a customer - ie, they choose to stop using your products or services. The customer churn rate is the percentage of customers that stopped using your company's product or service during a certain time frame. Every company experiences churn - the key is to understand why your customers are churning and decrease the churn rate.
+## What is costumer churn?
+Customer churn, also known as customer attrition, is when a customer essentially stops being a customer - ie, they choose to stop using your products or services. The costumer churn rate is the percentage of customers that stopped using your company's product or service during a certain time frame. Every company experiences churn - the key is to understand why your customers are churning and decrease the churn rate.
 
-## How to model churn?
-The most common way to analyse churn is using classification models. Your costumers either are a churn or are still with you, so it's easy to configure it as a binary classification problem. Given the nature of the problem, it's best to use an interpretable model, like logistic regression or a tree-based model, or a post hoc explanation tool like LIME or SHAP if the model isn't interpretable.
-Although this is the main modelling pratice seen on most article, there are limitations to this approach, you can only predict either the client wil leave the company or not. For example, you can rank the clients by it's likelihood to leave the company, but you cannot differ which costumer will be the first to leave the company. If you need this time to churn, you would need to create a secondary model to predict it.
+## How to model churn?
+The most common way to analyse churn is using classification models. Your costumers either are a churn or are still with you, so it's easy to configure it as a binary classification problem. Given the nature of the problem, it's best to use an interpretable model, like logistic regression or a tree-based model, or a post hoc explanation tool like LIME or SHAP if the model isn't interpretable.
+Although this is the main modelling pratice seen on most article, there are limitations to this approach, you can only predict either the client wil leave the company or not. For example, you can rank the clients by it's likelihood to leave the company, but you cannot differ which costumer will be the first to leave the company. If you need this time to churn, you would need to create a secondary model to predict it.
 
 And creating this secondary model, you are only able to analyze the observations that left the company, given that if they didn't leave you still dont know how long it'll take for them to churn. So there will be , hopefully, many costumers that will be excluded from this analysis.
 
@@ -30,7 +30,7 @@ With this model we are able to utilize both censored and uncensored observations
 
 # Churn Analysis on Telco
 ## Introduction
-The data that we are going to use is the 'Telco Costumer Churn', that lists the costumers from Telco, a telecommunication company. For that we have a csv file that contains 7032 rows and 21 columns, one of them being the Churn column, that identifies the costumers that left the company within the last month.
+The data that we are going to use is the 'Telco Costumer Churn', that lists the costumers from Telco, a telecommunication company. For that we have a csv file that contains 7032 rows and 21 columns, one of them being the Churn column, that identifies the costumers that left the company within the last month.
 
 Aside from the Churn column, we have a list of services that the costumer signed up for (phone, multiple lines, internet, etc.), account informations ( tenure, contract, payment method, paperless billing, monthly charges, and total charges) and demographic informations (gender, age range, and if they have partners and dependents).
 
