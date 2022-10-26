@@ -11,16 +11,16 @@ project: true
 ---
 # Churn Analysis
 ## What is Churn analysis?
- Churn analysis is the evaluation of a company’s customer loss rate. This analysis is focused on evaluating how many costumers are being lost and bringing to light the reasons why these costumers are leaving the company.
+Churn analysis is the evaluation of a company’s customer loss rate. This analysis is focused on evaluating how many costumers are being lost and bringing to light the reasons why these costumers are leaving the company.
 
- With this metrics, we are able to reajust company policies and products to better satisfy the client, rising clients fidelity and profits as well.
+With this metrics, we are able to reajust company policies and products to better satisfy the client, rising clients fidelity and profits as well.
 
 ## What is costumer churn?
- Customer churn, also known as customer attrition, is when a customer essentially stops being a customer - ie, they choose to stop using your products or services. The customer churn rate is the percentage of customers that stopped using your company's product or service during a certain time frame. Every company experiences churn - the key is to understand why your customers are churning and decrease the churn rate.
+Customer churn, also known as customer attrition, is when a customer essentially stops being a customer - ie, they choose to stop using your products or services. The customer churn rate is the percentage of customers that stopped using your company's product or service during a certain time frame. Every company experiences churn - the key is to understand why your customers are churning and decrease the churn rate.
 
 ## How to model churn?
- The most common way to analyse churn is using classification models. Your costumers either are a churn or are still with you, so it's easy to configure it as a binary classification problem. Given the nature of the problem, it's best to use an interpretable model, like logistic regression or a tree-based model, or a post hoc explanation tool like LIME or SHAP if the model isn't interpretable.
-  Although this is the main modelling pratice seen on most article, there are limitations to this approach, you can only predict either the client will leave the company or not. For example, you can rank the clients by it's likelihood to leave the company, but you cannot differ which costumer will be the first to leave the company. If you need this time to churn, you would need to create a secondary model to predict it.
+The most common way to analyse churn is using classification models. Your costumers either are a churn or are still with you, so it's easy to configure it as a binary classification problem. Given the nature of the problem, it's best to use an interpretable model, like logistic regression or a tree-based model, or a post hoc explanation tool like LIME or SHAP if the model isn't interpretable.
+Although this is the main modelling pratice seen on most article, there are limitations to this approach, you can only predict either the client wil leave the company or not. For example, you can rank the clients by it's likelihood to leave the company, but you cannot differ which costumer will be the first to leave the company. If you need this time to churn, you would need to create a secondary model to predict it.
 
 And creating this secondary model, you are only able to analyze the observations that left the company, given that if they didn't leave you still dont know how long it'll take for them to churn. So there will be , hopefully, many costumers that will be excluded from this analysis.
 
@@ -69,3 +69,15 @@ We also plotted the behaviour of the survival rates for each of the independent 
 ![SurvivalRate](/assets/img/2022-04-09-ChurnAnalysis-project/SurvivalRate.png)
 
 We can see, as well, that clients that have longer contracts tend to stay longer with the company, even considering their contract length. And clients that have automatic payment tends to stay longer too.
+
+# Modelling
+
+Now we will start to model our data. For this purpose, as said earlier, we'll use survival models. Usually the only models shown for this approach are the Kaplan Meier model and the Cox Proportional Hazard model, but many other models are available, like tree-based models and deep learning models.
+
+Here we assess four models: Bag Tree, Boost Tree, Logistic Survival Regression and Cox PH models. For feature selection, we used the statistical significance from the Cox PH model, which lead us to nine features: Partner, Dependents, PhoneService, InternetService, Contract, PaperlessBilling, PaymentMethod, MonthlyCharges, TotalCharges.
+
+To evaluate the models we use a common metric for this field, the C-Index. With it we can better evaluate the concordance of the predictions.
+
+The outputs were as follows, the Bag Tree model had a 0.904 C-Index, the Boost Tree had 0.918, the Logistic Regression had 0.926 and the PH Model had 0.922. Thus the model that had the best performance was the Survival Logistic Regression.
+
+From the model coefficients we are able to reassure some of the findings in the EDA step, like not having a partner lower you time with the company, as well as not having any dependent, using paperless billing, and using payment methods other than automatic.
