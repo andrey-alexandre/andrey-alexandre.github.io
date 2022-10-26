@@ -1,7 +1,7 @@
 # Site
-title:              Blog do Dey
-bio:                'Estatístico te ensinando sobre ciência de dados'
-description:        "Eu sou um profissional da área de dados há 7 anos, disposto a compartilhar o que aprendi até o momento"
+title:              Andrey Alexandre
+bio:                'A statistician teaching you data science'
+description:        "I work with data analytics for the past 7 years and decided to share what I've learned and what I'm trying to learn now."
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/logo.png'
@@ -38,7 +38,7 @@ disqus_shortname:   andrey-alexandre
   #ad-slot:
 #bing-verify:
 email:              andreyalexandre16@gmail.com
-#twitter:            username
+twitter:            andrey_alexand1
 #facebook:           username
 github-url:         username
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link

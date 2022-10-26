@@ -1,11 +1,9 @@
 ---
 layout: page
-title: Sobre o autor
-tags: [about, Jekyll, theme, moon]
+title: About me
+tags: [about]
 date: 2022-01-29
 comments: false
 ---
-    
-<center><a href="http://taylantatli.github.io/Moon"><b>Moon</b></a> is a minimal, one column jekyll theme.</center>
 
-Eu sou Andrey Alexandre, tenho 24 anos e sou formado em estatística.
+I'm Andrey Alexandre, 24 years old and graduated in Statistics.
